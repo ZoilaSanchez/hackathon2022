@@ -15,11 +15,11 @@ def completeString(word, maxNumber, index, array):
             # print("no son del mismo length", word)
             wordAddSpaces =  splitWord(word)
             howManyTimesAddSpaces = len(wordAddSpaces)
-            wordLength = len(word)
-            # while wordLength < maxNumber:
-            for wordSplitted in wordAddSpaces:
-                wordSplitted = wordSplitted + addSpaces(1)
-            word = ','.join(wordSplitted)
+            while len(word)< maxNumber:
+                for wordSplitted in wordAddSpaces:
+                    wordSplitted = wordSplitted + addSpaces(1)
+                word = ' '.join(wordAddSpaces)
+                print(word, len(word))
         # print("no son del mismo length", word)
     return word
 def addSpaces(number):
@@ -30,11 +30,5 @@ def addSpaces(number):
 def splitWord(word):
     word = word.split(' ')
     return word
-#     collection = []
-#     for letter in word:
-#         collection.append(letter.lower())
-#         # print(letter)
-#     collection.sort()
-#     return collection
 print("a"+addSpaces(24)+"b")
 print(justificar(["justificar el", "oo oso es ", "e"], 24))
