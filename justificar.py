@@ -5,27 +5,26 @@ def justificar(array, maxNumber):
             cadenaFinal = cadenaFinal + "\n\"" +  completeString(word, maxNumber, index, array) +"\","
         else:
             cadenaFinal = cadenaFinal + "\"" +  completeString(word, maxNumber, index, array) +"\","
-        # completeString(word, maxNumber)
     return cadenaFinal
 def completeString(word, maxNumber, index, array):
     if(len(word) != maxNumber):
         if(index == len(array) - 1):
             word = word + addSpaces(maxNumber - len(word))
         if(len(word) < maxNumber):
-            # print("no son del mismo length", word)
             wordAddSpaces =  splitWord(word)
-            howManyTimesAddSpaces = len(wordAddSpaces)
             while len(word)< maxNumber:
                 wordWithSpaces = []
                 for index, wordSplitted in enumerate(wordAddSpaces):
-                    if(index != len(wordAddSpaces) - 1):
+                    if(len(' '.join(wordWithSpaces)) > maxNumber):
+                        print("rompio")
+                        break
+                    if(index != len(wordAddSpaces) - 1 ):
                         wordSplitted = wordSplitted + addSpaces(1)
                     wordWithSpaces.append(wordSplitted)
-                    # print("******", wordSplitted)
                 word = ' '.join(wordAddSpaces)
                 wordAddSpaces = wordWithSpaces
-                # print(word, len(word))
-        # print("no son del mismo length", word)
+            if(len(word) > maxNumber):
+                word = word.replace(" ", "", 1)
     return word
 def addSpaces(number):
     spaces = ""
@@ -35,5 +34,4 @@ def addSpaces(number):
 def splitWord(word):
     word = word.split(' ')
     return word
-print("a"+addSpaces(24)+"b")
-print(justificar(["justificar el", "oo oso es ", "e"], 24))
+print(justificar(["justificar el", "oo oso es", "e d c dfjl", "escribir algo", "b de veras", "d"], 24))
