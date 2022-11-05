@@ -34,4 +34,30 @@ def addSpaces(number):
 def splitWord(word):
     word = word.split(' ')
     return word
-print(justificar(["justificar el", "oo oso es", "e d c dfjl", "escribir algo", "b de veras", "d"], 24))
+
+def deletepace(word):
+    word = word.strip()
+    word = " ".join( word.split() )
+    return word
+
+
+
+cadenas=[]
+print(" ----------------------- ")
+print(" Justificador de texto ")
+print(" ----------------------- ")
+
+max = input('Cantidad de caracteres por linea = ')
+max=int(max)
+cantidad = input('Cantidad del array  = ')
+cantidad=int(cantidad)
+print(f"Voy a solicitarte {cantidad} palabras con un maximo de {max} caracteres")
+
+for i in range(cantidad):
+    cad = input(f"Ingresa la cadena {i + 1}: ")
+    cadenas.append(deletepace(cad))
+
+addSpaces(max)
+print("\n*************** ")
+print("Resultados:\n")
+print(justificar(cadenas, max))
