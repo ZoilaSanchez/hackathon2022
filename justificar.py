@@ -17,8 +17,9 @@ def completeString(word, maxNumber, index, array):
             howManyTimesAddSpaces = len(wordAddSpaces)
             while len(word)< maxNumber:
                 wordWithSpaces = []
-                for wordSplitted in wordAddSpaces:
-                    wordSplitted = wordSplitted + addSpaces(1)
+                for index, wordSplitted in enumerate(wordAddSpaces):
+                    if(index != len(wordAddSpaces) - 1):
+                        wordSplitted = wordSplitted + addSpaces(1)
                     wordWithSpaces.append(wordSplitted)
                     # print("******", wordSplitted)
                 word = ' '.join(wordAddSpaces)
