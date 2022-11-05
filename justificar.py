@@ -20,16 +20,16 @@ def completeString(word, maxNumber, index, array):
                 for wordSplitted in wordAddSpaces:
                     wordSplitted = wordSplitted + addSpaces(1)
                     wordWithSpaces.append(wordSplitted)
-                    print("******", wordSplitted)
+                    # print("******", wordSplitted)
                 word = ' '.join(wordAddSpaces)
                 wordAddSpaces = wordWithSpaces
-                print(word, len(word))
+                # print(word, len(word))
         # print("no son del mismo length", word)
     return word
 def addSpaces(number):
     spaces = ""
     for i in range(number):
-        spaces = spaces + "*"
+        spaces = spaces + " "
     return spaces
 def splitWord(word):
     word = word.split(' ')
