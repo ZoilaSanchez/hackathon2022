@@ -15,5 +15,18 @@ def getArray(word):
         # print(letter)
     collection.sort()
     return collection
-print(scramble("Deudora", "Eduardo"))
-print(scramble("ale", "otro"))
+
+print(" ---------------- ")
+print(" Scramble ")
+print(" ---------------- ")
+nomb1 = input(' Ingrese Cadena 1 = ')
+nomb2= input(' Ingrese Cadena 2 = ')
+
+if(len(nomb1)== len(nomb2)):
+    print("\n*************** ")
+    print("Resultados:")
+    print("¿La cadena {} es cadena desordenada de {}? = {}".format(nomb2,nomb1,scramble(nomb1, nomb2)))
+else:
+    print("\n*************** ")
+    print("Resultados:")
+    print("¿La cadena {} es cadena desordenada de {}? = {}".format(nomb2,nomb1,False))
